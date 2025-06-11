@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>chai aur code</title>
+</head>
+<body>
+   <h1 id="FirstHeading" class="FirstText">hi there we are learning about dom</h1>
+   <p id="RandomText" class="lorem">Lorem ipsum dolor sit, amet consectetur adipisicing.</p>
+   <ul class="parent">
+    <li class="table">listOne</li>
+    <li class="table">listTwo</li>
+    <li class="table">listThree</li>
+   </ul>
+   <ul class="Weekdays">
+    <li class="day">Monday</li>
+    <li class="day">Tuesday</li>
+    <li class="day">Wednesday</li>
+   </ul>
+   <script>
+    const parent = document.querySelector('.parent');
+    console.log(parent);
+    console.log(parent.children)
+    console.log(parent.children[0]) //to access first child
+    for(let i =0 ; i< parent.children.length ; i++){  //you can use for loop on HTML collection
+        console.log(parent.children[i].innerHTML);
+    }
+    parent.children[1].style.color= "green"
+    // console.log(parent.firstElementChild)  //with these two you can access the children
+   // console.log(parent.lastElementChild)
+
+    //if you want to move from parent to child 
+    const Day = document.querySelector('.day')
+    // console.log(Day)
+    // console.log(Day.parentElement)
+    // console.log(Day.nextElementSibling)
+    console.log("NODES ",parent.childNodes)
+
+    
+    </script>
+</body>
+</html>
