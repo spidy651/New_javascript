@@ -9,18 +9,50 @@
     <h2>Amazing image</h2>
     <div >
         <ul id="images">
-            <li><img width="200px" id="photoshop" src="https://images.pexels.com/photos/3561339/pexels-photo-3561339.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="photoshop" onlcick = "alert('owl')"></li>
+            <li><img width="200px" id="photoshop" src="https://images.pexels.com/photos/3561339/pexels-photo-3561339.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="photoshop" ></li>
             <li><img width="200px" id="japan" src="https://images.pexels.com/photos/3532553/pexels-photo-3532553.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
             <li><img width="200px" id="river" src="https://images.pexels.com/photos/3532551/pexels-photo-3532551.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
-            <li><img width="200px" id="owl" src="https://images.pexels.com/photos/3532552/pexels-photo-3532552.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="" ></li>
+            <li><img width="200px" id="owl" src="https://images.pexels.com/photos/3532552/pexels-photo-3532552.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""  ></li>
             <li><img width="200px" id="prayer" src="https://images.pexels.com/photos/2522671/pexels-photo-2522671.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
             <li><a style="color: aliceblue;" href="https://google.com" id="google">Google</a></li>
         </ul>
    </div>
 </body>
 <script>
+//another approach (printing alert messages of owl )
 
+// document.querySelector('#owl').onclick = function(){
+//     alert("owl clicked")
+// }
 
+//BETTER APPROACH
+
+// document.querySelector('#owl').addEventListener("click" , function (e) {
+// alert("owl is clicked");
+// }, false)
+
+//EVENT PROPOGATION
+document.getElementById('images').addEventListener("click" , function(e){
+alert("you have clicked an ul");
+} , false )
+
+document.getElementById('owl').addEventListener("click" , function(e){
+alert("you have clicked an owl");
+} , false )
+
+document.getElementById('google').addEventListener("click" , function(e){
+    e.preventDefault();
+    e.stopPropagation();
+    console.log("you have clicked on google");
+} , false )
+
+//HOW TO REMOVE USING ADDeventListner
+document.getElementById('images').addEventListener("click" , function(e){
+    console.log(e.target.parentNode);
+    const removeIt = e.target.parentNode;
+    removeIt.parentNode.removeChild(removeIt)
+        //OR
+    //removeIt.remove();
 
 </script>
 </html>
