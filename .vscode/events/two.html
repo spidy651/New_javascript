@@ -21,6 +21,10 @@ const SaySandeep = function(){
 const change = function(){
     document.querySelector('h1').innerHTML="chai is love coffee is tattii"
 }
-setInterval(Change , 2000);
+document.querySelector('#stop').addEventListener("click" , function(e){
+    clearInterval(change);
+    console.log(" stopped");
+} , false)
+setInterval(change , 2000);
 </script>
 </html>
