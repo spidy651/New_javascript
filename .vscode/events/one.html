@@ -50,9 +50,10 @@ document.getElementById('google').addEventListener("click" , function(e){
 document.getElementById('images').addEventListener("click" , function(e){
     console.log(e.target.parentNode);
     const removeIt = e.target.parentNode;
-    removeIt.parentNode.removeChild(removeIt)
+    removeIt.parentNode.removeChild(removeIt);
         //OR
     //removeIt.remove();
+} )
 
 </script>
 </html>
