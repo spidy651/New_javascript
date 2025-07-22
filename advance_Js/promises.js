@@ -76,3 +76,24 @@ async function ConsumePromiseFive(){
     }
 }
 ConsumePromiseFive();
+
+// async function getAllusers(){
+// try{
+// const response =  await fetch(`https://api.github.com/users/spidy651`);
+// const data = await response.json();  //because response take time 
+// console.log(data);
+// }
+// catch(error){
+// console.log("E:" , error);
+// }
+// }
+// getAllusers();
+
+//TRYING THE ABOVE WITH THEN() AND CATCH SYNTAX
+
+ fetch(`https://api.github.com/users/spidy651`)
+ .then((response)=>{
+ return response.json();
+ }).then((response)=>{
+    console.log(response);
+ }).catch((error)=>console.log(error));
