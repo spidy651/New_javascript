@@ -47,6 +47,8 @@ Information.prototype.truelength = function (){
 const Myname = new Information("   sandeep");
 console.log(Myname.truelength());
 
+
+
 // Here's what happens behind the scenes when the new keyword is used:
 
 // A new object is created: The new keyword initiates the creation of a new JavaScript object.
@@ -58,3 +60,39 @@ console.log(Myname.truelength());
 // The new object is returned: After the constructor function has been called, if it doesn't return a non-primitive value (object, array, function, etc.), the newly created object is returned.
 
 // */
+
+
+
+
+
+//now we are creating prototype directly from object so that anyone can access that 
+
+
+let myHeros = ["shaktiman" , "thor" , "spiderman"];
+
+let HeroPower = {
+  thor : "hammer",
+  spiderman : "sling",
+  getSpiderPower : function(){
+  console.log(`spiderman power is ${this.spiderman}`);
+  }
+}
+
+Object.prototype.sandeep = function(){    //INJECTING PROTOTYPE DIRECTLY INTO OBJECT DATA TYPE
+  console.log(`sandeep is present in all object`);
+}
+
+myHeros.sandeep();    //now you can access sandeep prototype by an array and an object 
+HeroPower.sandeep();
+
+
+//Now lets see if we declare a prototype in array and try to access it with an object 
+
+Array.prototype.heySandeep = function(){
+  console.log(`sandeep says hello `);
+  }
+
+myHeros.heySandeep();
+HeroPower.heySandeep();  //this will show error because array can acccess the prototype other than that data type that are at the same level 
+//like string , function and above it like object cant access it 
+
