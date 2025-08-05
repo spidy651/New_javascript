@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bind</title>
+</head>
+<body>
+    <button> Button clicked </button>
+</body>
+<script>
+    class react {
+        constructor ( ) {
+    this.library = "react";
+    this.server = "http://codeAurChai.com";
+    document.querySelector('button').addEventListener('click' , this.handleclick.bind(this))  //here we have used .bind(this) because it will bind all the this of handleclick method otherwise we wont be able to get server vlaue
+        }
+        handleclick(){
+            console.log('button clicked');
+            console.log(this.server);
+        }
+    }
+    new react();
+</script>
+</html>
