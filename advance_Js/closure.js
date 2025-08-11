@@ -15,7 +15,7 @@ init();
 function outer(){
     let username = "sandeep"
     function inner(){
-        const BrotherElement = middle;
+        const BrotherElement = "middle";
         console.log("inner" , username);
     }
     function innerTwo(){
